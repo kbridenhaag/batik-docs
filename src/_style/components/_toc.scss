@@ -21,6 +21,7 @@
 .kbridh-toc__nav a {
   @include govuk-font(16);
   @include govuk-link-style-no-underline;
+  @include govuk-link-style-no-visited-state;
 
   &:hover {
     @include govuk-link-hover-decoration;
