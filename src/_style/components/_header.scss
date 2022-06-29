@@ -1,0 +1,46 @@
+$app-header-background-colour: govuk-colour("white");
+$app-header-text-colour: $govuk-brand-colour;
+$app-header-border: govuk-spacing(2) solid $govuk-brand-colour;
+
+.app-header {
+  background-color: $app-header-background-colour;
+  border-bottom: $app-header-border;
+}
+
+.app-header__container {
+  @include app-container;
+  padding-top: govuk-spacing(2);
+  padding-bottom: govuk-spacing(2);
+}
+
+.app-header__link {
+  @include govuk-link-common;
+  @include govuk-link-style-no-visited-state;
+}
+
+.app-header__link--homepage {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    color: $app-header-text-colour;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: $govuk-link-underline-offset * -3;
+      border-bottom: 0.25rem solid $app-header-text-colour;
+    }
+  }
+
+}
+
+.app-header__logo {
+  width: 180px;
+
+  @include govuk-media-query($from: desktop) {
+    width: 240px;
+  }
+}

@@ -1,0 +1,38 @@
+@mixin govuk-global-styles {
+  a {
+    @extend %govuk-link;
+  }
+
+  p {
+    @extend %govuk-body-m;
+  }
+
+  ul {
+    @extend %govuk-list;
+    @extend %govuk-list--bullet;
+  }
+
+  h1 {
+    @extend %govuk-heading-xl;
+  }
+
+  h2 {
+    @extend %govuk-heading-l;
+  }
+
+  h3 {
+    @extend %govuk-heading-m;
+  }
+
+  h4,
+  h5,
+  h6 {
+    @extend %govuk-heading-s;
+  }
+}
+
+@include govuk-exports("govuk/core/global-styles") {
+  @if $govuk-global-styles == true {
+    @include govuk-global-styles;
+  }
+}

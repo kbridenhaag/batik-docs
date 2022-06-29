@@ -1,0 +1,73 @@
+$govuk-footer-background: $govuk-canvas-background-colour;
+$govuk-footer-border: $govuk-border-colour;
+$govuk-footer-border-top: $govuk-border-colour;
+$govuk-footer-text: $govuk-text-colour;
+
+.kbridh-footer {
+  @include app-container;
+  @include govuk-font($size: 16);
+  @include govuk-responsive-padding(9, "top");
+  @include govuk-responsive-padding(5, "bottom");
+
+  border-top: 1px solid $govuk-footer-border-top;
+  color: $govuk-footer-text;
+  background: $govuk-footer-background;
+}
+
+.kbridh-footer__logo {
+  width: 80px;
+  margin-right: govuk-spacing(3);
+
+  @include govuk-media-query($from: desktop) {
+    margin-right: govuk-spacing(4);
+    width: 110px;
+  }
+}
+
+.kbridh-footer__meta {
+  display: flex;
+  align-items: center;
+  column-gap: govuk-spacing(6);
+  row-gap: govuk-spacing(6);
+  flex-wrap: wrap;
+}
+
+.kbridh-footer__meta-item {
+  flex-grow: 1;
+}
+
+.kbridh-footer__meta-item--logo {
+  display: flex;
+  align-items: center;
+}
+
+.kbridh-footer__embassy-name span:not(:last-child) {
+  font-weight: bold;
+}
+
+.kbridh-footer__link {
+  @include govuk-link-common;
+
+  @if ($govuk-use-legacy-palette) {
+    &:link,
+    &:visited {
+      color: $govuk-footer-text;
+    }
+
+    &:hover,
+    &:active {
+      color: $govuk-footer-link-hover-colour;
+    }
+  } @else {
+    @include govuk-link-style-text;
+  }
+
+  // alphagov/govuk_template includes a specific a:link:focus selector
+  // designed to make unvisited links a slightly darker blue when focussed, so
+  // we need to override the text colour for that combination of selectors.
+  @include govuk-compatibility(govuk_template) {
+    &:link:focus {
+      @include govuk-text-colour;
+    }
+  }
+}

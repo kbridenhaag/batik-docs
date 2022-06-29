@@ -1,0 +1,68 @@
+.kbridh-toc__nav {
+  @include app-container;
+  @include govuk-responsive-padding(3, "top");
+  padding-bottom: govuk-spacing(2);
+  border-bottom: 1px solid $govuk-border-colour;
+
+  @include govuk-media-query($from: desktop) {
+    padding-bottom: govuk-spacing(3);
+    border-bottom: none;
+  }
+}
+
+.kbridh-toc__nav > ul {
+  padding: 0;
+}
+
+.kbridh-toc__nav ul {
+  list-style: none;
+}
+
+.kbridh-toc__nav a {
+  @include govuk-font(16);
+  @include govuk-link-style-no-underline;
+
+  &:hover {
+    @include govuk-link-hover-decoration;
+  }
+
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.kbridh-toc__nav ul {
+  margin-bottom: 0;
+}
+
+.kbridh-toc__nav > ul > li > a {
+  @include govuk-font(16, bold);
+  margin-bottom: govuk-spacing(1);
+
+  @include govuk-media-query($from: desktop) {
+    @include govuk-font(19, bold);
+  }
+}
+
+.kbridh-toc__nav > ul > li {
+  margin-bottom: govuk-spacing(2);
+}
+
+.kbridh-toc__nav > ul > li > ul > li {
+  padding-top: govuk-spacing(1);
+  padding-bottom: govuk-spacing(1);
+}
+
+.kbridh-toc__nav li > ul {
+  margin: 0;
+  padding: 0;
+}
+
+.kbridh-toc__nav li {
+  margin-bottom: 0;
+}
+
+.kbridh-toc__nav li a {
+  display: inline-block;
+  margin-bottom: 0;
+}

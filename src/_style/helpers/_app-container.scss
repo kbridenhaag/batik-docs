@@ -1,0 +1,9 @@
+@mixin app-container {
+  padding-left: govuk-spacing(4);
+  padding-right: govuk-spacing(4);
+
+  @include govuk-media-query($from: desktop) {
+    padding-left: govuk-spacing(6);
+    padding-right: govuk-spacing(6);
+  }
+}

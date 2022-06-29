@@ -1,0 +1,51 @@
+.app-pane {
+  @include govuk-media-query($from: desktop) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+.app-pane__body {
+  @include govuk-media-query($from: desktop) {
+    display: flex;
+    flex: 1 1 100%;
+    min-height: 0;
+    position: relative;
+
+    & > * {
+      overflow-x: scroll;
+    }
+  }
+}
+
+.app-pane__toc {
+  @include govuk-media-query($from: desktop) {
+    flex: 0 0 auto;
+    width: 330px;
+    border-right: 1px solid $govuk-border-colour;
+  }
+}
+
+.app-pane__content {
+  @include govuk-media-query($from: desktop) {
+    flex: 1 1 auto;
+  }
+}
+
+.app-pane__main {
+  @include app-container;
+  @include govuk-responsive-padding(3, "top");
+  @include govuk-responsive-padding(9, "bottom");
+
+  @include govuk-media-query($from: desktop) {
+    padding-left: govuk-spacing(6);
+    padding-right: govuk-spacing(6);
+    max-width: 80ch;
+  }
+}
+
+.app-pane__main > h1:first-of-type {
+  @include govuk-responsive-padding(2, "top");
+}
